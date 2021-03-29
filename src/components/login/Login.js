@@ -1,9 +1,11 @@
 import "./Login.css"
 import logo from "../../resources/amazon.png"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { useState } from "react"
+import { auth } from "../../firebase"
 
 const Login = () => {
+    const history = useHistory()
     const [email, setEmail] = useState("")
     const [passsword, setPassword] = useState("")
 
@@ -11,14 +13,28 @@ const Login = () => {
         // prevent from refresshing
         e.preventDefault()
 
-        // Some fancy firebase login stuf
+        auth
+            .signInWithEmailAndPassword(email, passsword)
+            .then((auth) => {
+                history.push("/")
+            })
+            .catch(error => alert(error.message))
     }
 
     const register = e => {
         // prevent from refresshing
         e.preventDefault()
 
-        // Some fancy firebase login stuf
+        auth
+            .createUserWithEmailAndPassword(email, passsword)
+            .then((auth) => {
+                // it successfully created a new user wth email and password
+                console.log(auth);
+                if (auth) {
+                    history.push("/")
+                }
+            })
+            .catch(error => alert(error.message))
     }
 
     return (
@@ -35,7 +51,7 @@ const Login = () => {
                                         onChange={e => setEmail(e.target.value)}/>
 
                     <h5>Password</h5>
-                    <input type="passsword" value={passsword}
+                    <input type="password" value={passsword}
                                             onChange={e => setPassword(e.target.value)}/>
 
                     <button className="loginSignin_button" 
