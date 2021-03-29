@@ -17,14 +17,14 @@ const Home = () => {
 
             <div className="home_row">
                 <Product 
-                          id="56565"
+                          id="5656"
                           title="The Lean Startup is a new approach being adopted across the globe, 
                                 changing the way companies are built and new products are launched." 
                           price={29.99} 
                           image={lean_startup_image} 
                           rating={5}/>
                 <Product 
-                          id="56565"
+                          id="5565"
                           title="The Nerd Fitness “Stuck in the House” Game · 
                                  Walk the complete perimeter of your house or apartment, reverse, and do it again. " 
                           price={309.99} 
@@ -40,14 +40,14 @@ const Home = () => {
                           image={shop_image} 
                           rating={3}/>
                 <Product 
-                          id="56565"
+                          id="565"
                           title="Amazon Basics · Home Improvement · 
                                 Bathroom Hardware · Cabinet Hardware · Cords and Power Management · " 
                           price={95.0} 
                           image={basics_image} 
                           rating={5}/>
                 <Product 
-                          id="56565"
+                          id="5665"
                           title="We rounded up the best 
                                 new beauty products that launched this month, including hair, skin-care, and makeup items." 
                           price={9.0} 
@@ -56,7 +56,7 @@ const Home = () => {
             </div>
             <div className="home_row">
                 <Product 
-                          id="56565"
+                          id="65"
                           title="Find a TV in your budget that fits perfectly • Get it for the lowest price! • 
                                 Detailed reviews and helpful knowledge • Find your new TV now!" 
                           price={309.99} 
