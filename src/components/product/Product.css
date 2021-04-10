@@ -14,6 +14,8 @@
     max-height: 400px;
     min-width: 100px;
     z-index: 1;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px grey;
 }
 
 .product > img{
