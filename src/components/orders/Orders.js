@@ -9,9 +9,7 @@ const Orders = () => {
     const [orders, setOrders] = useState()
 
     useEffect(() => {
-
         if (user){
-
             db
               .collection("users")
               .doc(user?.uid)
@@ -23,7 +21,6 @@ const Orders = () => {
                       data: doc.data()
                   })))
               ))
-
         }else{
             setOrders([])
         }
@@ -34,9 +31,7 @@ const Orders = () => {
            <h1>Your Orders</h1>
 
            <div className="orders_order">
-                {orders?.map(order => {
-                    <Order order={order} />
-                })}
+                {orders?.map(order => (<Order order={order} />))}
            </div> 
         </div>
     )

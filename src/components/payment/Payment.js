@@ -128,7 +128,6 @@ const Payment = () => {
                         <h3>Payment Method</h3>
                     </div>
                     <div className="payment_details">
-                        {/* Stripe magic will go here */}
                         <form onSubmit={handleSubmit}>
                             <CardElement onChange={handleChange}/>
 

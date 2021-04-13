@@ -1,12 +1,14 @@
-import moment from "moment"
 import CheckoutProduct from "../checkout/CheckoutProduct"
 import "./Order.css"
+import moment from "moment"
+import CurrencyFormat from "react-currency-format"
+
 
 const Order = ({ order }) => {
     return (
         <div className="order">
             <h2>Order</h2>
-            <p>{moment.unix(order.data.created).format("MMMM Da YYYY, h:mma")}</p>
+            <p>{moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")}</p>
             <p className="order_id">
                 <small>{order.id}</small>
             </p>
@@ -17,8 +19,22 @@ const Order = ({ order }) => {
                     price={item.price}
                     rating={item.rating}
                     image={item.image}
+                    hideButton
                 />
             ))}
+
+            <CurrencyFormat 
+                renderText={(value) => (
+                    <>
+                    <h3 className="order_total">Order Total: {value}</h3>
+                    </>
+                )}
+                decimalScale={2}
+                value={order.data.amount / 100}
+                displayType={"text"}
+                thousandSeparators={true}
+                prefix={"$"}
+            />
         </div>
     )
 }
